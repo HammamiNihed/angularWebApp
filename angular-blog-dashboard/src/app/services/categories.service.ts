@@ -48,7 +48,7 @@ export class CategoriesService {
   }
 
   updateData(id:string, editData:any) {
-    this.afs.collection('categories').doc(id).update(editData).then((docRef:any) => {
+    this.afs.doc(`categories/${id}`).update(editData).then((docRef:any) => {
       this.toastr.success('Category updated successfully ..!');
     })
   }

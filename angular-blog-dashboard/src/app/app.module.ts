@@ -12,15 +12,21 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriesComponent } from './categories/categories.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
+import { AllPostComponent } from './posts/all-post/all-post.component';
+import { NewPostComponent } from './posts/new-post/new-post.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AllPostComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +35,9 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularEditorModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot() 
   ],
   providers: [],
