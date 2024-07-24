@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriesService } from 'src/app/services/categories.service';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-all-post',
@@ -8,14 +8,19 @@ import { CategoriesService } from 'src/app/services/categories.service';
 })
 export class AllPostComponent implements OnInit{
 
-  categoryArray!: Array<any>;
-  constructor(private cs: CategoriesService) {}
+  postArray!: Array<any>;
+  constructor(private postService: PostsService) {}
 
   ngOnInit(): void {
-    this.cs.loadData().subscribe((val) => {
-      console.log(val);
-      this.categoryArray = val;
+    this.postService.loadData().subscribe((val) => {
+      
+      this.postArray = val;
+      console.log(this.postArray);
     });
+  }
+
+  onDelete(postImgPath:string,id:any) {
+    this.postService.deleteImage(postImgPath,id);
   }
 
 }
