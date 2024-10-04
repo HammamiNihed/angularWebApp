@@ -2,3 +2,13 @@
     margin-top: 150px;
     min-height: 45vh;
 }
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  

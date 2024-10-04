@@ -5,6 +5,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { NewPostComponent } from './posts/new-post/new-post.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +44,11 @@ import { LoginComponent } from './auth/login/login.component';
     HttpClientModule,
     ReactiveFormsModule,
     AngularFireStorageModule,
+    AngularFireAuthModule,
     ToastrModule.forRoot() 
   ],
   providers: [],
+  //start with the appcomponent
   bootstrap: [AppComponent]
 })
 export class AppModule { }
